@@ -1,0 +1,68 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "title": "React Workshop",
+      "date": "2026-06-25",
+      "location": "Online",
+      "speaker": "John Smith",
+      "featured": true
+    },
+    {
+      "id": 2,
+      "title": "AI & Machine Learning Seminar",
+      "date": "2026-06-28",
+      "location": "Ahmedabad",
+      "speaker": "Rahul Mehta",
+      "featured": false
+    },
+    {
+      "id": 3,
+      "title": "Frontend Bootcamp",
+      "date": "2026-07-02",
+      "location": "Delhi",
+      "speaker": "Ankit Sharma",
+      "featured": true
+    },
+    {
+      "id": 4,
+      "title": "Data Science Masterclass",
+      "date": "2026-07-05",
+      "location": "Online",
+      "speaker": "Priya Patel",
+      "featured": false
+    },
+    {
+      "id": 5,
+      "title": "UI/UX Design Workshop",
+      "date": "2026-07-10",
+      "location": "Mumbai",
+      "speaker": "Neha Kapoor",
+      "featured": false
+    },
+    {
+      "id": 6,
+      "title": "Node.js Backend Training",
+      "date": "2026-07-15",
+      "location": "Bangalore",
+      "speaker": "Amit Verma",
+      "featured": true
+    },
+    {
+      "id": 7,
+      "title": "Cyber Security Awareness",
+      "date": "2026-07-18",
+      "location": "Online",
+      "speaker": "Karan Malhotra",
+      "featured": false
+    },
+    {
+      "id": 8,
+      "title": "Python for Data Analysis",
+      "date": "2026-07-22",
+      "location": "Hyderabad",
+      "speaker": "Riya Gupta",
+      "featured": true
+    }
+  ]
+}
