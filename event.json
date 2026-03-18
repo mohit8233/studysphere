@@ -63,6 +63,38 @@
       "location": "Hyderabad",
       "speaker": "Riya Gupta",
       "featured": true
+    },
+    {
+      "id": 9,
+      "title": "Full Stack Development Bootcamp",
+      "date": "2026-07-25",
+      "location": "Pune",
+      "speaker": "Vikas Singh",
+      "featured": false
+    },
+    {
+      "id": 10,
+      "title": "Cloud Computing with AWS",
+      "date": "2026-07-28",
+      "location": "Chennai",
+      "speaker": "Suresh Iyer",
+      "featured": true
+    },
+    {
+      "id": 11,
+      "title": "DevOps Fundamentals",
+      "date": "2026-08-01",
+      "location": "Online",
+      "speaker": "Manoj Kumar",
+      "featured": false
+    },
+    {
+      "id": 12,
+      "title": "Advanced JavaScript Concepts",
+      "date": "2026-08-05",
+      "location": "Kolkata",
+      "speaker": "Deepak Roy",
+      "featured": true
     }
   ]
 }

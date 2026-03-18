@@ -7,57 +7,92 @@ const HighlightedEventCard = withEventHighlight(EventCard);
 function Home() {
   const [events, setEvents] = useState([]);
   const [search, setSearch] = useState("");
+  const [theme, setTheme] = useState("light");
   const searchRef = useRef();
 
-  // Fetch events
+
   useEffect(() => {
     let isMounted = true;
 
     fetch("http://localhost:3000/events")
-      .then(res => res.json())
-      .then(data => { if (isMounted) setEvents(data); });
+      .then((res) => res.json())
+      .then((data) => {
+        if (isMounted) setEvents(data);
+      });
 
-    return () => { isMounted = false; };
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
-  // Focus input on mount
   useEffect(() => {
     searchRef.current?.focus();
   }, []);
 
-  // Global key listener: type anywhere → input focus
+  
   useEffect(() => {
-    const handleKeyPress = (e) => {
+    const handleKeyPress = () => {
       if (document.activeElement !== searchRef.current) {
-        searchRef.current.focus(); // focus search input
+        searchRef.current.focus();
       }
     };
 
     window.addEventListener("keydown", handleKeyPress);
 
     return () => {
-      window.removeEventListener("keydown", handleKeyPress); // cleanup
+      window.removeEventListener("keydown", handleKeyPress);
     };
   }, []);
 
+  // 
+  useEffect(() => {
+    document.body.classList.remove(
+      "bg-gray-300",
+      "bg-gray-800",
+      "text-black",
+      "text-blue"
+    );
+
+    if (theme === "light") {
+      document.body.classList.add("bg-gray-300", "text-black");
+    } else {
+      document.body.classList.add("bg-gray-800", "text-blue");
+    }
+  }, [theme]);
+
+  
   const filteredEvents = useMemo(() => {
-    return events.filter(event =>
+    return events.filter((event) =>
       event.title.toLowerCase().includes(search.toLowerCase())
     );
   }, [events, search]);
 
   return (
-    <div className="p-6">
+    <div className="p-6 min-h-screen">
+      
+     
+      <button
+        onClick={() =>
+          setTheme((prev) => (prev === "light" ? "dark" : "light"))
+        }
+        className="mb-4 px-3 py-1 bg-blue-500 text-white rounded"
+      >
+        Change Theme
+      </button>
+
+  
       <input
         ref={searchRef}
         type="text"
         placeholder="Search events..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
-        className="border p-2 mb-4 rounded w-full"
+        className="border p-2 mb-4 rounded w-full text-black"
       />
+
+ 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {filteredEvents.map(event => (
+        {filteredEvents.map((event) => (
           <HighlightedEventCard key={event.id} event={event} />
         ))}
       </div>

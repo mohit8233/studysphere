@@ -45,7 +45,7 @@ function EventDetails() {
         Book Ticket
       </Link>
 
-      {/* Optional: Back to home */}
+      
       <Link
         to="/"
         
