@@ -7,7 +7,7 @@ const HighlightedEventCard = withEventHighlight(EventCard);
 function Home() {
   const [events, setEvents] = useState([]);
   const [search, setSearch] = useState("");
-  const [theme, setTheme] = useState("light");
+  // const [theme, setTheme] = useState("light");
   const searchRef = useRef();
 
 
@@ -44,21 +44,8 @@ function Home() {
     };
   }, []);
 
-  // 
-  useEffect(() => {
-    document.body.classList.remove(
-      "bg-gray-300",
-      "bg-gray-800",
-      "text-black",
-      "text-blue"
-    );
-
-    if (theme === "light") {
-      document.body.classList.add("bg-gray-300", "text-black");
-    } else {
-      document.body.classList.add("bg-gray-800", "text-blue");
-    }
-  }, [theme]);
+  
+  
 
   
   const filteredEvents = useMemo(() => {
@@ -69,25 +56,20 @@ function Home() {
 
   return (
     <div className="p-6 min-h-screen">
-      
-     
-      <button
-        onClick={() =>
-          setTheme((prev) => (prev === "light" ? "dark" : "light"))
-        }
-        className="mb-4 px-3 py-1 bg-blue-500 text-white rounded"
-      >
-        Change Theme
-      </button>
+   
+      <div className="bg-gray-600 text-white p-4 shadow-md flex justify-between items-center">
+        <h1 className="text-xl font-bold">🎉 Event Explorer</h1>
+        <p className="text-sm opacity-80">Find your favorite events</p>
+      </div>
 
-  
+
       <input
         ref={searchRef}
         type="text"
         placeholder="Search events..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
-        className="border p-2 mb-4 rounded w-full text-black"
+        className="border p-2 mb-4 mt-4 rounded w-full text-black"
       />
 
  

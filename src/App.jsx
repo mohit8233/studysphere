@@ -6,11 +6,13 @@ import EventDetails from './pages/EventDetails'
 import BookTickets from './pages/BookTickets'
 import MyTickets from './pages/MyTickets'
 import Login from './pages/Login'
-import DashBoardLayout from './components/DashBoardLayout'
 import Dashboard from './pages/Dashboard'
+import Footer from './components/Footer'
+import { ThemeProvider } from './context/ThemeContext'
 
 const App = () => {
   return (
+    <ThemeProvider>
     <BrowserRouter>
        <Navbar/>
      <Routes>
@@ -23,13 +25,14 @@ const App = () => {
        <Route
           path="/dashboard"
           element={
-            <DashBoardLayout>
-              <Dashboard/>
-            </DashBoardLayout>
+             <Dashboard/>
+           
           }
         />
      </Routes>
+     <Footer/>
     </BrowserRouter>
+    </ThemeProvider>
   )
 }
 

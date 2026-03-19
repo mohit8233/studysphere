@@ -26,7 +26,7 @@ function BookTicket() {
   if (submitted) return <p className="p-6 text-green-600">Ticket booked successfully!</p>;
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-md mx-auto p-6 bg-white rounded shadow-md mt-6">
+    <form onSubmit={handleSubmit} className="max-w-md mx-auto p-6 bg-blue-400 rounded shadow-md mt-6">
       <h2 className="text-xl font-bold mb-4">{event.title}</h2>
       <input ref={nameRef} placeholder="Your Name" className="border p-2 w-full mb-3 rounded" required />
       <input ref={emailRef} type="email" placeholder="Your Email" className="border p-2 w-full mb-3 rounded" required />

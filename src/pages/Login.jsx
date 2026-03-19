@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { ThemeContext } from "../context/ThemeContext";
 
 const Login = () => {
 
@@ -7,6 +8,7 @@ const Login = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const {theme} = useContext(ThemeContext)
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,9 +26,13 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-900">
+    <div className={`min-h-screen flex items-center justify-center ${
+        theme === "light"
+          ? "bg-gray-200 text-black"
+          : "bg-gray-900 text-white"
+      }`}>
 
-      <div className="bg-white p-8 rounded-xl shadow-lg w-96">
+      <div className="bg-indigo-400 p-8 rounded-xl shadow-lg w-96">
 
         <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
 
